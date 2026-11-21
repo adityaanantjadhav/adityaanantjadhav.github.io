@@ -7,17 +7,6 @@
   const hasGsap = typeof gsap !== 'undefined';
   if (hasGsap && typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
-  /* ---------------- accordion (works without GSAP) ---------------- */
-  $$('.branch').forEach((branch) => {
-    const btn = $('.branch__head', branch);
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') !== 'true';
-      btn.setAttribute('aria-expanded', String(open));
-      branch.dataset.open = String(open);
-      if (hasGsap && window.ScrollTrigger) setTimeout(() => ScrollTrigger.refresh(), 480);
-    });
-  });
-
   /* ---------------- hero: prompt to page ---------------- */
   const PROMPT = 'Find the best backend developer in the world, strong in Java, Go and AI.';
   const typed = $('#typed'), caret = $('#caret'), meter = $('#meter');
@@ -57,7 +46,7 @@
     for (let i = 1; i <= PROMPT.length; i++) {
       if (id !== runId) return;
       typed.textContent = PROMPT.slice(0, i);
-      await sleep(i % 9 === 0 ? 70 : 17);
+      await sleep(i % 9 === 0 ? 22 : 6);
     }
     await sleep(180);
     caret.classList.add('is-off');
