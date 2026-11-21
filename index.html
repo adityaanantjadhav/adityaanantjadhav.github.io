@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aditya Jadhav, backend engineer</title>
+  <meta name="description" content="Aditya Jadhav is a backend software engineer in Kolhapur, India, working on an AI platform that turns plain-English ideas into web apps.">
+  <meta name="theme-color" content="#F2F1F8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aditya Jadhav, backend engineer">
+  <meta property="og:description" content="Backend engineer building AI app generation. Java, Spring Boot, Go and SQL.">
+  <meta property="og:image" content="https://adityaanantjadhav.github.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234636F5'/%3E%3Cpath d='M9 22l5-12 5 12M11 18h6M23 10v12' stroke='%23fff' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Hide the hero's final state only when we are going to animate it.
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('building');
+  </script>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top" aria-label="Aditya Jadhav, back to top">aj</a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Projects</a>
+      <a href="#stack">Skills</a>
+    </nav>
+    <a class="nav__cta" href="#contact">Say hello</a>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="title">
+      <div class="hero__left">
+        <div class="console" id="console">
+          <div class="bar-win">
+            <i></i><i></i><i></i>
+            <span class="bar-win__title">new-portfolio.prompt</span>
+            <button class="replay" id="replay" type="button" aria-label="Replay the page build">Replay</button>
+          </div>
+          <div class="console__body">
+            <p class="prompt"><span class="prompt__sigil" aria-hidden="true">&gt;</span><span id="typed"></span><span class="caret" id="caret" aria-hidden="true"></span></p>
+            <ul class="log" id="log">
+              <li><span class="tick" aria-hidden="true"></span>Plan the layout</li>
+              <li><span class="tick" aria-hidden="true"></span>Write the components</li>
+              <li><span class="tick" aria-hidden="true"></span>Add the content</li>
+            </ul>
+            <div class="meter" aria-hidden="true"><span id="meter"></span></div>
+          </div>
+        </div>
+
+        <h1 class="hero__title" id="title">
+          <span class="line"><span>Aditya</span></span>
+          <span class="line"><span>Jadhav</span></span>
+        </h1>
+        <p class="hero__lead reveal" id="lead">Backend engineer at TechVerito in Kolhapur. I work on Octiq, an AI platform that turns plain-English ideas into production-ready web apps.</p>
+        <div class="hero__cta reveal" id="cta">
+          <a class="btn btn--primary" href="#work">See my projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="frame" id="frame">
+          <div class="bar-win bar-win--light"><i></i><i></i><i></i><span class="bar-win__title">localhost:3000</span></div>
+          <img src="assets/hero.jpg" alt="Aditya Jadhav in a hat and sunglasses, leaning on a carved stone step at Hampi" width="1100" height="1467" fetchpriority="high">
+        </div>
+        <span class="chip chip--a" data-depth="30"><span>@RestController</span></span>
+        <span class="chip chip--b" data-depth="42"><span>go func() &#123; &#125;</span></span>
+        <span class="chip chip--c" data-depth="24"><span>mcp.connect("jira")</span></span>
+        <span class="chip chip--d" data-depth="36"><span>docker compose up</span></span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about" aria-labelledby="about-h">
+      <div class="wrap about__grid">
+        <figure class="about__photo">
+          <div class="frame frame--tilt">
+            <div class="bar-win bar-win--light"><i></i><i></i><i></i><span class="bar-win__title">about.jpg</span></div>
+            <img src="assets/about.jpg" alt="Aditya standing in shallow sea water at a beach, looking off to the side" width="1100" height="1473" loading="lazy">
+          </div>
+        </figure>
+        <div class="about__text">
+          <h2 id="about-h" class="h2">A backend engineer who likes reliable, readable systems.</h2>
+          <p>I spent my first year at TechVerito building a multi-tenant SaaS platform for logistics: pricing engines, rule-based fees, discount tiers and caching that stays correct when data changes. I work mostly in Java and Spring Boot, with Go and SQL Server alongside.</p>
+          <p>Now I'm on Octiq, where people describe an app in plain English and get a working web application back. My part is the plumbing: getting projects in from GitHub, chat tools and Jira, and making sure what comes in actually builds.</p>
+          <dl class="facts">
+            <div><dt>Based in</dt><dd>Kolhapur, Maharashtra</dd></div>
+            <div><dt>Working at</dt><dd>TechVerito Solution LLP</dd></div>
+            <div><dt>Studied</dt><dd>B.E. at I2IT, Pune. GPA 8.4</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="exp-h">
+      <div class="wrap">
+        <h2 id="exp-h" class="h2">Experience</h2>
+        <div class="tl" id="tl">
+          <div class="tl__rail" aria-hidden="true"><span class="tl__fill" id="tlfill"></span></div>
+
+          <article class="tl__item">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <header class="tl__head">
+              <h3>Backend Software Engineer</h3>
+              <p>TechVerito Solution LLP <span class="muted">· July 2025 to present</span></p>
+            </header>
+
+            <div class="branch" data-open="true">
+              <button class="branch__head" type="button" aria-expanded="true" aria-controls="b-octiq">
+                <span class="branch__name"><b>Octiq</b> AI platform that turns plain-English ideas into production-ready web apps</span>
+                <span class="branch__icon" aria-hidden="true"></span>
+              </button>
+              <div class="branch__body" id="b-octiq"><div>
+                <ul class="commits">
+                  <li>Added Microsoft Teams, Telegram and Slack support, so users can import their codebases and request changes from those apps. An LLM-based intent classifier reads each prompt and responds accordingly.</li>
+                  <li>Built prototype creation, letting users make a prototype at low cost and start full app generation from it.</li>
+                  <li>Implemented GitHub project import with build validation, so every imported project is confirmed to build.</li>
+                  <li>Integrated Jira MCP, so users can reference Jira tickets and generate features from their requirements.</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="branch" data-open="false">
+              <button class="branch__head" type="button" aria-expanded="false" aria-controls="b-boxtalk">
+                <span class="branch__name"><b>Boxtalk</b> SaaS billing and payments platform for third-party logistics warehouses</span>
+                <span class="branch__icon" aria-hidden="true"></span>
+              </button>
+              <div class="branch__body" id="b-boxtalk"><div>
+                <ul class="commits">
+                  <li>Built the core billing pipeline for a multi-tenant platform: carrier cost ingestion, fee calculation, invoice generation and payment collection.</li>
+                  <li>Engineered a discrepancy detection system that flags carrier overcharges against expected rates, with an operator workflow to dispute, adjust or write off each variance.</li>
+                  <li>Developed a configurable markup engine that prices carrier costs by actual and dimensional weight, shipping service and zone.</li>
+                  <li>Implemented rule-based fee and tiered discount engines driven by shipment attributes, business rules and rolling shipment volumes.</li>
+                  <li>Designed a checksum-based cache that detects data changes and refreshes results across multiple engines automatically.</li>
+                </ul>
+              </div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="work" aria-labelledby="work-h">
+      <div class="wrap">
+        <h2 id="work-h" class="h2">Projects</h2>
+        <div class="projects">
+
+          <article class="proj proj--wide">
+            <div class="proj__win">
+              <div class="bar-win bar-win--dark"><i></i><i></i><i></i><span class="bar-win__title">disc-scan.local</span></div>
+              <div class="pv pv--mri" aria-hidden="true">
+                <div class="spine">
+                  <span class="v" style="--w:46px"></span><span class="d"></span>
+                  <span class="v" style="--w:52px"></span><span class="d"></span>
+                  <span class="v" style="--w:58px"></span><span class="d d--hit"></span>
+                  <span class="v" style="--w:62px"></span><span class="d"></span>
+                  <span class="v" style="--w:64px"></span>
+                  <em class="box">disc</em>
+                </div>
+                <span class="scan"></span>
+              </div>
+            </div>
+            <div class="proj__text">
+              <h3>Lumbar Disc Degeneration Detection</h3>
+              <p>Trained YOLOv11 models to detect lumbar disc degeneration in MRI scans, then built a web app around them with Django and Spring Boot backends and MySQL.</p>
+              <ul class="tags"><li>YOLOv11</li><li>Django</li><li>Spring Boot</li><li>MySQL</li><li>HTML, CSS, JS</li></ul>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__win">
+              <div class="bar-win"><i></i><i></i><i></i><span class="bar-win__title">quiz.local</span></div>
+              <div class="pv pv--quiz" aria-hidden="true">
+                <div class="q__top"><span class="q__title"></span><span class="q__timer">12:40</span></div>
+                <span class="q__opt"></span><span class="q__opt q__opt--on"></span><span class="q__opt"></span><span class="q__opt"></span>
+              </div>
+            </div>
+            <div class="proj__text">
+              <h3>Quiz Application</h3>
+              <p>Microservices backend for a quiz platform: registration and login, quiz creation and scheduling, participant selection with email notifications, attempts and results.</p>
+              <ul class="tags"><li>Spring Boot</li><li>Spring Microservices</li><li>PostgreSQL</li><li>Keycloak</li><li>Docker</li></ul>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__win">
+              <div class="bar-win"><i></i><i></i><i></i><span class="bar-win__title">shop.local</span></div>
+              <div class="pv pv--shop" aria-hidden="true">
+                <div class="s__top"><span class="s__logo"></span><span class="s__cart">2</span></div>
+                <div class="s__grid"><span></span><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <div class="proj__text">
+              <h3>E-Commerce Website</h3>
+              <p>An Amazon-style shopping site with sign-in, product browsing, a cart, purchase flow and seller listings.</p>
+              <ul class="tags"><li>JSP</li><li>Servlet</li><li>Bootstrap</li><li>MySQL</li></ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section stack" id="stack" aria-labelledby="stack-h">
+      <div class="wrap"><h2 id="stack-h" class="h2">Skills</h2></div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__row">
+          <div class="marquee__track">
+            <span>Java</span><span>Spring Boot</span><span>Go</span><span>SQL Server</span><span>Spring Security</span><span>Keycloak</span><span>Gin</span><span>OAuth</span><span>LangChain</span><span>LangGraph</span>
+            <span>Java</span><span>Spring Boot</span><span>Go</span><span>SQL Server</span><span>Spring Security</span><span>Keycloak</span><span>Gin</span><span>OAuth</span><span>LangChain</span><span>LangGraph</span>
+          </div>
+        </div>
+        <div class="marquee__row marquee__row--rev">
+          <div class="marquee__track">
+            <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>TDD</span><span>React</span><span>PostgreSQL</span><span>MySQL</span><span>MCP</span><span>Cursor</span><span>Claude Code</span><span>Open Code</span>
+            <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>TDD</span><span>React</span><span>PostgreSQL</span><span>MySQL</span><span>MCP</span><span>Cursor</span><span>Claude Code</span><span>Open Code</span>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>Java, Go, SQL</dd></div>
+          <div><dt>Backend</dt><dd>Spring Boot, Spring Microservices, Spring Security, Keycloak, Gin, OAuth, LangChain, LangGraph</dd></div>
+          <div><dt>Frontend</dt><dd>HTML, CSS, Bootstrap, React</dd></div>
+          <div><dt>Databases</dt><dd>SQL Server, MySQL, PostgreSQL</dd></div>
+          <div><dt>DevOps and testing</dt><dd>AWS, Docker, Kubernetes, TDD, Spring Boot testing</dd></div>
+          <div><dt>AI tools</dt><dd>Cursor, Claude Code, Open Code, MCP, Skills</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education" aria-labelledby="edu-h">
+      <div class="wrap two">
+        <div>
+          <h2 id="edu-h" class="h2 h2--sm">Education</h2>
+          <ul class="list">
+            <li><b>Bachelor of Engineering</b>International Institute of Information Technology (I2IT), Pune<span class="muted">Jan 2022 to May 2025 · GPA 8.4</span></li>
+            <li><b>HSC</b>Shri Shamrao Patil Jr. College, Kolhapur<span class="muted">2021 · 90.5%</span></li>
+            <li><b>SSC</b>Sou. S. M. Lohiya High School, Kolhapur<span class="muted">2019 · 87.2%</span></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="h2 h2--sm">Achievements and activities</h2>
+          <ul class="list">
+            <li><b>HackerRank Problem Solving Gold Badge</b>500+ problems solved on GeeksforGeeks. Completed a Udemy Full-stack Java Developer course.</li>
+            <li><b>PR Head, Young Indian Committee</b>Also on the marketing team of the ACM Student Chapter and a PR committee member.</li>
+            <li><b>Community and creative</b>Took part in the OSM mapping party organized by TomTom. Won a college-level video making competition.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap contact__grid">
+        <div class="contact__text">
+          <h2 id="contact-h" class="h2 h2--xl">Have something to build? Let's talk.</h2>
+          <p>I'm open to backend and AI engineering roles, and to interesting side projects.</p>
+          <div class="contact__actions">
+            <a class="btn btn--primary btn--lg btn--magnet" href="mailto:adityaanantjadhav26@gmail.com?subject=Hello%20Aditya"><span>Send message</span></a>
+          </div>
+          <ul class="links">
+            <li><a href="mailto:adityaanantjadhav26@gmail.com">adityaanantjadhav26@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/adityaanantjadhav" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/adityaanantjadhav" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+        <figure class="contact__photo">
+          <div class="frame frame--tilt-r">
+            <div class="bar-win bar-win--light"><i></i><i></i><i></i><span class="bar-win__title">contact.jpg</span></div>
+            <img src="assets/contact.jpg" alt="Aditya smiling on a path through a green hillside resort, a backpack on one shoulder" width="1100" height="1956" loading="lazy">
+          </div>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <span>© 2026 Aditya Jadhav</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
