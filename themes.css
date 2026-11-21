@@ -1,0 +1,197 @@
+/* ================= Dark and light mode =================
+   Dark (Black) is the default. Light (the blue scheme) is applied with <html data-theme="light">.
+   Each mode sets the same 12 tokens; everything else is derived from them.
+   Loaded after style.css so it replaces the colours hard-coded there. */
+
+:root {
+  color-scheme: dark;
+  /* dark mode: Black */
+  --bg: #08080A;
+  --surface: #131316;
+  --deep: #000000;
+  --text: #F5F5F7;
+  --text-soft: #DCDCE0;
+  --muted: #B0B0B8;
+  --accent: #3D5AFE;
+  --accent-text: #8C9EFF;
+  --on-accent: #FFFFFF;
+  --mint: #D4FF5E;
+  --tok4: #FF9F6B;
+  --tok5: #7DD3FC;
+
+  /* derived */
+  --ink: var(--deep);
+  --bar: color-mix(in srgb, var(--surface) 84%, #fff);
+  --bar2: color-mix(in srgb, var(--surface) 92%, #fff);
+  --console: color-mix(in srgb, var(--bg) 55%, var(--surface));
+  --chip-alt: color-mix(in srgb, var(--accent) 30%, var(--surface));
+  --accent-soft: color-mix(in srgb, var(--accent) 22%, transparent);
+  --line: color-mix(in srgb, var(--text) 14%, transparent);
+  --line-strong: color-mix(in srgb, var(--text) 34%, transparent);
+  --hl-bright: color-mix(in srgb, var(--mint) 70%, #fff);
+}
+
+/* "Light mode" is the blue scheme (Midnight Violet): brighter, bluer and more colourful than dark. */
+[data-theme="light"] {
+  --bg: #07061A;
+  --surface: #15134C;
+  --deep: #040312;
+  --text: #F7F6FF;
+  --text-soft: #E6E5FB;
+  --muted: #CBCAEC;
+  --accent: #6A5BFF;
+  --accent-text: #B9B0FF;
+  --on-accent: #FFFFFF;
+  --mint: #9CFFD6;
+  --tok4: #FFD98A;
+  --tok5: #8CD0FF;
+}
+
+/* ---------- replace colours that were hard-coded in style.css ---------- */
+::selection { background: var(--accent); color: var(--on-accent); }
+.progress { background: var(--accent-text); }
+
+.nav { background: color-mix(in srgb, var(--surface) 78%, transparent); }
+.nav__logo { color: var(--on-accent); }
+
+.bar-win { background: var(--bar); }
+.bar-win--light { background: var(--bar2); }
+.bar-win--dark { background: var(--bar); border-color: var(--line); }
+.bar-win--dark .bar-win__title { color: var(--muted); }
+.console .bar-win { background: var(--bar); border-color: var(--line); }
+.console .bar-win__title { color: var(--muted); }
+
+.frame { box-shadow: 0 30px 60px -28px color-mix(in srgb, var(--accent) 50%, transparent), 0 2px 0 rgba(0, 0, 0, .2); }
+
+.console { color: var(--text); background: var(--console); }
+.log { color: color-mix(in srgb, var(--text) 55%, transparent); }
+.log li.active, .log li.done { color: var(--text); }
+.tick { border-color: color-mix(in srgb, var(--text) 30%, transparent); }
+.replay { color: var(--text-soft); }
+
+.chip { background: color-mix(in srgb, var(--surface) 92%, transparent); color: var(--text); }
+.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn--primary:hover { background: var(--text); border-color: var(--text); color: var(--ink); }
+
+.branch[data-open="true"] {
+  border-color: color-mix(in srgb, var(--accent-text) 45%, transparent);
+  box-shadow: 0 18px 40px -26px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.branch__link:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+.a-ink { fill: var(--deep); }
+.art--boxtalk .a-ink { fill: var(--text); }
+
+.tags li { color: var(--text-soft); }
+
+.proj--wide .proj__win { border-color: var(--line); }
+.pv--quiz, .pv--shop { background: color-mix(in srgb, var(--surface) 86%, #fff); }
+.q__timer { background: var(--accent); color: var(--on-accent); }
+.s__cart { color: var(--on-accent); }
+
+.marquee__row--rev span:nth-child(3n) { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.marquee__row:not(.marquee__row--rev) span:nth-child(4n) { background: var(--chip-alt); border-color: var(--chip-alt); color: var(--text); }
+
+.contact { color: var(--text); background-color: color-mix(in srgb, var(--deep) 80%, transparent); }
+.contact__text p { color: var(--text-soft); }
+.links a { color: var(--text); }
+.foot { background-color: color-mix(in srgb, var(--deep) 92%, transparent); color: var(--muted); }
+.foot a { color: var(--text); }
+.hint { background: color-mix(in srgb, var(--surface) 88%, transparent); }
+
+/* text that sits directly on the floating background */
+.hero__lead, .about__text p, .facts dt, .facts dd, .proj__text p, .skills dt, .skills dd,
+.list li, .list b, .tl__head p, .tl__head .muted, .contact__text p {
+  color: var(--text-soft);
+  text-shadow:
+    0 0 8px color-mix(in srgb, var(--bg) 95%, transparent),
+    0 0 18px color-mix(in srgb, var(--bg) 90%, transparent),
+    0 0 26px color-mix(in srgb, var(--accent-text) 20%, transparent);
+}
+.list .muted, .tl__head .muted { color: var(--muted); }
+
+.hl {
+  color: var(--hl-bright);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--mint) 55%, transparent);
+}
+
+/* ---------- dark / light toggle: one small round icon button ---------- */
+.mode {
+  position: fixed; left: 18px; bottom: 18px; z-index: 70;
+  display: grid; place-items: center; width: 40px; height: 40px; padding: 0;
+  color: var(--text); cursor: pointer;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  border: 1px solid var(--line-strong); border-radius: 50%;
+  box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .6);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: border-color .2s, transform .2s, background .2s;
+}
+.mode:hover { border-color: var(--accent-text); transform: scale(1.06); }
+.mode:active { transform: scale(.96); }
+.mode svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.mode__moon { display: none; }
+[data-theme="light"] .mode__sun { display: none; }
+[data-theme="light"] .mode__moon { display: block; }
+
+/* ---------- top bar: full-width, logo left, links right ---------- */
+.nav {
+  top: 0; left: 0; right: 0; transform: none; width: auto;
+  padding: 16px max(var(--gutter), calc((100vw - var(--wrap)) / 2));
+  background: transparent; border: 0; border-bottom: 1px solid transparent; border-radius: 0;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  transition: background .3s, border-color .3s, padding .3s;
+}
+.nav.is-scrolled {
+  padding-block: 10px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom-color: var(--line);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.nav__logo {
+  position: relative; display: inline-flex; align-items: baseline;
+  width: auto; height: auto; border-radius: 0; background: none;
+  color: var(--text); font-size: 2.1rem; font-weight: 800; font-variation-settings: "wdth" 75;
+  letter-spacing: -.05em; line-height: 1;
+}
+.nav__dot { color: var(--mint); }
+.nav__logo::after {
+  content: ""; position: absolute; left: 0; right: .5em; bottom: -6px; height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent-text), var(--mint));
+  transform: scaleX(.3); transform-origin: left; transition: transform .35s;
+}
+.nav__logo:hover::after, .nav__logo:focus-visible::after { transform: scaleX(1); }
+.nav__right { display: flex; align-items: center; gap: clamp(18px, 3vw, 40px); }
+.nav__links { gap: clamp(18px, 2.6vw, 34px); font-size: 1.1rem; font-weight: 600; letter-spacing: -.005em; }
+.nav__links a { color: var(--text-soft); }
+.nav__links a:hover { color: var(--text); }
+.nav__cta { font-size: 1.05rem; font-weight: 700; padding: 10px 22px; }
+@media (max-width: 640px) {
+  .nav { padding-inline: var(--gutter); }
+  .nav__logo { font-size: 1.8rem; }
+}
+
+/* ---------- "Adi" signature that signs itself ---------- */
+.nav__logo { display: inline-block; font-size: 0; line-height: 0; letter-spacing: 0; }
+.nav__logo::after { content: none; }
+.sig { display: block; height: 50px; width: auto; overflow: visible; }
+.sig .s {
+  fill: var(--text); fill-opacity: 0;
+  stroke: var(--text); stroke-width: 20; stroke-linejoin: round; stroke-linecap: round;
+  stroke-dasharray: 1 2; stroke-dashoffset: 1;
+}
+.sig .swoosh {
+  fill: none; stroke: url(#sigGrad); stroke-width: 24; stroke-linecap: round;
+  stroke-dasharray: 1 2; stroke-dashoffset: 1;
+}
+.sig.play .s {
+  animation: sig-draw 1.15s cubic-bezier(.55, .1, .3, 1) var(--d) forwards,
+             sig-fill .55s ease calc(var(--d) + 1.05s) forwards;
+}
+.sig.play .swoosh { animation: sig-draw .8s ease-out 2.1s forwards; }
+@keyframes sig-draw { to { stroke-dashoffset: 0; } }
+@keyframes sig-fill { to { fill-opacity: 1; stroke-width: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .sig .s { animation: none !important; stroke-dashoffset: 0; fill-opacity: 1; stroke-width: 0; }
+  .sig .swoosh { animation: none !important; stroke-dashoffset: 0; }
+}
+@media (max-width: 640px) { .sig { height: 42px; } }
