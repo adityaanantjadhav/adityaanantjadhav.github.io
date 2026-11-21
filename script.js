@@ -7,6 +7,25 @@
   const hasGsap = typeof gsap !== 'undefined';
   if (hasGsap && typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
+  /* ---------------- signature: replay the signing on hover ---------------- */
+  const sig = $('.sig');
+  let signedAt = performance.now();
+  const resign = () => {
+    if (!sig || performance.now() - signedAt < 3200) return;
+    signedAt = performance.now();
+    sig.classList.remove('play');
+    void sig.getBoundingClientRect();
+    sig.classList.add('play');
+  };
+  const logo = $('.nav__logo');
+  if (logo) { logo.addEventListener('mouseenter', resign); logo.addEventListener('focus', resign); }
+
+  /* ---------------- top bar gets a background once you scroll ---------------- */
+  const nav = $('#nav');
+  const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 24);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
   /* ---------------- hero: prompt to page ---------------- */
   const PROMPT = 'Find the best backend developer in the world, strong in Java, Go and AI.';
   const typed = $('#typed'), caret = $('#caret'), meter = $('#meter');
