@@ -19,7 +19,7 @@
   });
 
   /* ---------------- hero: prompt to page ---------------- */
-  const PROMPT = 'Build a portfolio for Aditya Jadhav, a backend engineer who works on AI app generation.';
+  const PROMPT = 'Find the best backend developer in the world, strong in Java, Go and AI.';
   const typed = $('#typed'), caret = $('#caret'), meter = $('#meter');
   const logItems = $$('#log li');
   const frame = $('#frame');
@@ -65,7 +65,7 @@
       if (id !== runId) return;
       logItems[i].classList.add('active');
       gsap.to(meter, { width: ((i + 1) / logItems.length) * 100 + '%', duration: 0.5, ease: 'power2.out' });
-      await sleep(520);
+      await sleep(i === logItems.length - 1 ? 380 : 560);
       logItems[i].classList.replace('active', 'done');
     }
     await sleep(200);
