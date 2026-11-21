@@ -29,7 +29,7 @@
   }
 
   function makeToken(word) {
-    const fs = rand(13, 25);
+    const fs = rand(11, 20);
     ctx.font = `500 ${fs}px "JetBrains Mono", ui-monospace, Menlo, monospace`;
     const w = ctx.measureText(word).width + fs * 1.2;
     const h = fs * 2;
