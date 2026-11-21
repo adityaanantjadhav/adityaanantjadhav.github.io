@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aditya Jadhav, backend engineer</title>
   <meta name="description" content="Aditya Jadhav is a backend software engineer in Pune, India, working on an AI platform that turns plain-English ideas into web apps.">
-  <meta name="theme-color" content="#0C0B1E">
+  <meta name="theme-color" content="#08080A">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Aditya Jadhav, backend engineer">
   <meta property="og:description" content="Backend engineer building AI app generation. Java, Spring Boot, Go and SQL.">
@@ -16,6 +16,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes.css">
+  <script>
+    // Apply the saved colour scheme before first paint.
+    try { var t = localStorage.getItem('theme'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+  </script>
   <script>
     // Hide the hero's final state only when we are going to animate it.
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('building');
@@ -23,18 +28,30 @@
 </head>
 <body>
   <canvas id="bg" aria-hidden="true"></canvas>
-  <div class="hint" id="hint" aria-hidden="true">Click the background to scatter</div>
+  <div class="hint" id="hint" aria-hidden="true">Click the background. Hit a floater 10 times to pop it</div>
   <div class="progress" id="progress" aria-hidden="true"></div>
 
-  <header class="nav">
-    <a class="nav__logo" href="#top" aria-label="Aditya Jadhav, back to top">aj</a>
-    <nav class="nav__links" aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Projects</a>
-      <a href="#stack">Skills</a>
-    </nav>
-    <a class="nav__cta" href="#contact">Say hello</a>
+  <button class="mode" id="mode" type="button" role="switch" aria-checked="false" aria-label="Light mode"><svg class="mode__sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="mode__moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top" aria-label="Adi, back to top">
+    <svg class="sig play" viewBox="-40 -730 1660 880" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="sigGrad" x1="0" x2="1"><stop offset="0" style="stop-color:var(--accent-text)"/><stop offset="1" style="stop-color:var(--mint)"/></linearGradient></defs>
+      <path class="s" pathLength="1" style="--d:0.3s" d="M656 8Q618 8 598 -12Q578 -32 571 -63Q564 -94 562 -127Q562 -146 564 -172Q566 -198 570 -222Q573 -247 575 -259H346Q282 -192 224 -128Q167 -65 112 0H12Q38 -24 80 -64Q123 -105 177 -157Q231 -209 290 -268Q348 -326 407 -386Q466 -445 518 -500Q571 -556 612 -601Q632 -623 650 -646Q667 -668 689 -683Q711 -698 743 -698H815Q798 -682 781 -644Q764 -606 750 -562Q737 -518 728 -482Q715 -428 702 -365Q688 -302 680 -240Q672 -178 675 -125Q676 -106 682 -86Q689 -65 702 -50Q714 -36 733 -36Q750 -36 770 -49L776 -40Q763 -20 726 -6Q690 8 656 8ZM256 -499Q240 -516 232 -534Q225 -552 225 -568Q225 -588 234 -606Q242 -625 254 -638Q278 -665 314 -678Q350 -691 390 -694Q431 -698 468 -698H692Q671 -677 628 -666Q586 -654 536 -648Q486 -643 440 -638Q393 -634 363 -627Q310 -615 282 -581Q255 -547 256 -499ZM390 -309H582Q594 -375 610 -441Q627 -507 640 -557Q579 -499 516 -436Q452 -374 390 -309Z"/>
+      <path class="s" pathLength="1" style="--d:1.0s" d="M1092 6Q1062 6 1050 -16Q1039 -39 1039 -73Q1039 -89 1041 -106Q1043 -122 1046 -139Q1048 -154 1054 -176Q1060 -197 1068 -222Q1049 -184 1024 -144Q999 -105 970 -72Q940 -38 908 -18Q877 3 845 3Q817 3 798 -18Q778 -38 778 -89Q778 -141 796 -196Q814 -251 846 -298Q879 -346 924 -375Q968 -404 1021 -404Q1043 -404 1070 -395Q1097 -386 1111 -360Q1116 -368 1119 -376Q1122 -384 1125 -390Q1149 -443 1166 -490Q1183 -537 1196 -563Q1213 -597 1223 -614Q1233 -632 1242 -639Q1250 -646 1261 -649Q1270 -651 1281 -652Q1292 -653 1304 -653Q1316 -653 1332 -653Q1347 -653 1351 -654Q1334 -642 1311 -605Q1288 -568 1263 -516Q1238 -464 1214 -406Q1191 -347 1172 -290Q1152 -232 1140 -185Q1129 -138 1129 -109Q1129 -77 1147 -77Q1159 -77 1176 -89Q1192 -101 1206 -116Q1220 -131 1226 -138Q1246 -164 1264 -194Q1282 -223 1295 -249Q1300 -257 1302 -257Q1309 -257 1309 -239Q1309 -220 1299 -203Q1285 -179 1266 -150Q1246 -120 1226 -92Q1212 -74 1190 -51Q1167 -28 1142 -11Q1116 6 1092 6ZM890 -81Q893 -80 899 -80Q927 -80 964 -118Q1002 -155 1040 -216Q1048 -228 1059 -250Q1070 -272 1082 -298Q1095 -325 1106 -348Q1099 -358 1088 -362Q1078 -366 1066 -366Q1044 -366 1019 -354Q994 -343 977 -326Q951 -300 928 -259Q904 -218 890 -178Q875 -138 875 -111Q875 -86 890 -81Z"/>
+      <path class="s" pathLength="1" style="--d:1.55s" d="M1479 -480Q1453 -489 1453 -514Q1453 -537 1472 -562Q1490 -586 1512 -593Q1517 -595 1520 -595Q1524 -595 1528 -595Q1545 -595 1556 -585Q1567 -575 1567 -562Q1567 -544 1548 -532Q1533 -534 1519 -525Q1505 -516 1494 -503Q1484 -490 1479 -480ZM1307 6Q1294 6 1282 0Q1270 -5 1262 -21Q1251 -45 1251 -78Q1251 -114 1262 -158Q1273 -203 1291 -250Q1298 -267 1309 -292Q1320 -317 1335 -342Q1350 -367 1370 -384Q1389 -400 1412 -400Q1423 -400 1443 -399Q1463 -398 1472 -399Q1466 -395 1458 -383Q1450 -371 1443 -358Q1436 -346 1432 -339Q1406 -287 1383 -236Q1360 -185 1348 -138Q1346 -130 1345 -122Q1344 -114 1344 -107Q1344 -78 1363 -78Q1371 -78 1380 -82Q1390 -87 1403 -97Q1426 -115 1443 -138Q1463 -164 1481 -194Q1499 -223 1512 -248Q1517 -256 1519 -256Q1525 -256 1525 -239Q1525 -231 1522 -220Q1520 -210 1515 -201Q1501 -177 1482 -148Q1463 -119 1443 -92Q1429 -73 1406 -50Q1383 -27 1357 -10Q1331 6 1307 6Z"/>
+      <path class="swoosh" pathLength="1" d="M 10 85 C 400 130 1000 35 1560 78"/>
+    </svg>
+    </a>
+    <div class="nav__right">
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Projects</a>
+        <a href="#stack">Skills</a>
+      </nav>
+      <a class="nav__cta" href="#contact">Say hello</a>
+    </div>
   </header>
 
   <main id="top">
@@ -329,6 +346,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="themes.js"></script>
   <script src="bg.js"></script>
   <script src="script.js"></script>
 </body>
